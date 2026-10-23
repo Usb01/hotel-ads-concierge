@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}{{ lead.name or "Lead" }}{% endblock %}
+{% block content %}
+<a href="/" class="back">← Dashboard</a>
+<div class="grid lead">
+  <section class="card thread">
+    <h2>{{ lead.name or "Unknown guest" }}</h2>
+    {% for m in messages %}
+      <div class="msg {{ m.direction }} {{ m.author }}">
+        <div class="meta">{{ m.author }} · {{ m.channel }}{% if m.intent %} · {{ m.intent }}{% endif %} · {{ m.created_at[11:16] }}</div>
+        <div class="body">{{ m.body }}</div>
+      </div>
+    {% endfor %}
+    <form method="post" action="/leads/{{ lead.id }}/reply" class="reply">
+      <textarea name="body" rows="3" placeholder="Reply as staff…" required></textarea>
+      <button>Send{% if handoff %} &amp; resolve{% endif %}</button>
+    </form>
+  </section>
+
+  <aside class="card">
+    <h2>Lead</h2>
+    <dl>
+      <dt>Status</dt><dd><span class="status {{ lead.status }}">{{ lead.status | replace("_", " ") }}</span></dd>
+      <dt>Source</dt><dd><span class="pill {{ lead.source }}">{{ lead.source }}</span></dd>
+      <dt>Campaign</dt><dd>{{ lead.campaign or "–" }}</dd>
+      <dt>Ad</dt><dd>{{ lead.ad_name or "–" }}</dd>
+      <dt>Phone</dt><dd>{{ lead.phone or "–" }}</dd>
+      <dt>Email</dt><dd>{{ lead.email or "–" }}</dd>
+      <dt>Received</dt><dd>{{ lead.created_at[:16] | replace("T", " ") }}</dd>
+    </dl>
+    {% if handoff %}<p class="tag {{ handoff.reason }}">Waiting for staff: {{ handoff.reason | replace("_", " ") }}</p>{% endif %}
+    <form method="post" action="/leads/{{ lead.id }}/status" class="status-form">
+      <button name="status" value="booked" class="good">Mark booked</button>
+      <button name="status" value="lost" class="ghost">Mark lost</button>
+    </form>
+  </aside>
+</div>
+{% endblock %}

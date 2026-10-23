@@ -1,0 +1,82 @@
+{
+  "name": "Seabreeze Corniche Hotel",
+  "city": "Al Khobar",
+  "currency": "SAR",
+  "phone": "+966 13 000 0000",
+  "email": "reservations@seabreeze-demo.com",
+  "check_in": "15:00",
+  "check_out": "12:00",
+  "weekend_nights": ["Thu", "Fri"],
+  "inventory": {"DLX": 40, "SEA": 24, "FAM": 6},
+  "sold_out": {
+    "FAM": ["2026-12-31", "2027-01-01"],
+    "SEA": ["2026-12-31"]
+  },
+  "google_campaigns": {
+    "2208431": "Search – Al Khobar hotels",
+    "2208432": "Search – Corniche sea view"
+  },
+  "rooms": [
+    {
+      "code": "DLX",
+      "name": "Deluxe King",
+      "max_guests": 2,
+      "base_rate": 520,
+      "weekend_rate": 610,
+      "highlights": "32 m², king bed, city view, rain shower"
+    },
+    {
+      "code": "SEA",
+      "name": "Sea View Twin",
+      "max_guests": 3,
+      "base_rate": 680,
+      "weekend_rate": 790,
+      "highlights": "36 m², two queen beds, balcony facing the corniche"
+    },
+    {
+      "code": "FAM",
+      "name": "Family Suite",
+      "max_guests": 5,
+      "base_rate": 1150,
+      "weekend_rate": 1320,
+      "highlights": "70 m², separate living room, kitchenette, two bathrooms"
+    }
+  ],
+  "policies": [
+    {
+      "id": "breakfast",
+      "keywords": ["breakfast", "food", "meal", "buffet"],
+      "answer": "Breakfast buffet is served 6:30–10:30 in Marina Restaurant. It's included in direct bookings; otherwise it's SAR 75 per adult and free for children under 6."
+    },
+    {
+      "id": "parking",
+      "keywords": ["parking", "car", "valet"],
+      "answer": "Valet parking is free for in-house guests."
+    },
+    {
+      "id": "airport",
+      "keywords": ["airport", "transfer", "pickup", "pick up", "dmm"],
+      "answer": "We arrange airport transfers from King Fahd International (DMM) for SAR 220 each way in a sedan, or SAR 320 in a van. Book at least 24 hours ahead."
+    },
+    {
+      "id": "cancellation",
+      "keywords": ["cancel", "cancellation", "refund", "change booking"],
+      "answer": "Flexible rates can be cancelled free of charge until 48 hours before arrival. After that, the first night is charged."
+    },
+    {
+      "id": "pool",
+      "keywords": ["pool", "gym", "spa", "beach"],
+      "answer": "The rooftop pool and gym are open 6:00–23:00. The pool has family hours and ladies-only hours. Ask us for this week's timetable."
+    },
+    {
+      "id": "pets",
+      "keywords": ["pet", "dog", "cat"],
+      "answer": "Unfortunately we can't accommodate pets, except registered service animals."
+    },
+    {
+      "id": "early_checkin",
+      "keywords": ["early check", "late check", "check-in", "check in", "check-out", "check out"],
+      "answer": "Check-in is from 15:00 and check-out is until 12:00. Early check-in and late check-out depend on availability; late check-out until 16:00 costs 50% of the nightly rate."
+    }
+  ]
+}

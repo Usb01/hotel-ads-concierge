@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Concierge{% endblock %} · {{ hotel.name }}</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="top">
+    <a href="/" class="brand"><span class="dot"></span>{{ hotel.name }} <small>Ads Concierge</small></a>
+    <nav>
+      <a href="/">Dashboard</a>
+      <a href="/api/metrics">API</a>
+      <a href="/docs">Webhooks</a>
+    </nav>
+  </header>
+  <main>{% block content %}{% endblock %}</main>
+</body>
+</html>
